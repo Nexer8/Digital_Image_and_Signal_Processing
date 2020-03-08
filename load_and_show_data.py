@@ -16,7 +16,7 @@ def load_and_show_data():
 
     time = (
         np.arange(len(ecg_data[0])) / frequency
-    )  # Create an array of equal periods of time
+    )  # Create a set of time measurements
 
     for i, ecg in enumerate(ecg_data):
         plt.plot(time, ecg)
