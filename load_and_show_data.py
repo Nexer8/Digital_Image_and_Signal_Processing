@@ -27,7 +27,6 @@ def load_and_show_data():
 
 
 def main():
-    print("Hello")
     load_and_show_data()
 
 
