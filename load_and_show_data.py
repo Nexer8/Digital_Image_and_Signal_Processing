@@ -1,6 +1,6 @@
 # Cyfrowe przetwarzanie sygnałów i obrazów
 # Authors:  Mariusz Wiśniewski, 241393
-#           Kinga Marek, 235380
+#           Kinga Marek, 235280
 
 
 import matplotlib.pyplot as plt
