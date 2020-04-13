@@ -39,6 +39,7 @@ def main():
 
     sp = np.fft.fft(amplitude)
     freq = time / 2
+
     plt.plot(freq, sp.real, freq, sp.imag)
     plt.show()
 
