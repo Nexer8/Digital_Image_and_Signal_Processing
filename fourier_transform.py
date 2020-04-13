@@ -19,7 +19,7 @@ def main():
     fs = 65536  # sampling frequency
 
     x_axis = np.arange(sample_length)
-    y_axis = np.sin(2 * np.pi * frequency * x_axis)
+    y_axis = np.sin(2 * np.pi * frequency * x_axis / fs)
     plt.plot(x_axis, y_axis)
     plt.xlabel('sample(n)')
     plt.ylabel('voltage(V)')
@@ -29,14 +29,15 @@ def main():
     # amplitudowe na wykresie w zakresie częstotliwości [0, fs/2], gdzie fs oznacza
     # częstotliwość próbkowania.
 
+    # Część poniżej jest prawdopodobnie nieprawidłowa
     lower_bound = 1
     upper_bound = 3
     spacing = (upper_bound - lower_bound) / sample_length
 
     time = np.arange(lower_bound, upper_bound, spacing)
-    amplitude = np.sin(time)
+    amplitude = y_axis
 
-    sp = np.fft.fft(amplitude)
+    sp = np.fft.fft(y_axis)
     freq = np.fft.fftfreq(amplitude.shape[-1])
     plt.plot(freq, sp.real, freq, sp.imag)
     plt.show()
