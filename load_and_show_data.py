@@ -11,13 +11,10 @@ import numpy as np
 
 
 def load_and_show_data():
-    ecg_data = [[] for i in range(12)]
     frequency = 1000  # set the frequency to 1000 Hz
 
     data = np.loadtxt("Data/ekg1.txt", delimiter=" ")
-    for row in data:
-        for i, ecg in enumerate(ecg_data):
-            ecg.append(row[i])
+    ecg_data = np.hsplit(data, 12)
 
     time = np.arange(len(ecg_data[0])) / frequency  # Create a set of time measurements
 
