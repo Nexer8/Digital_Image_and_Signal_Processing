@@ -17,30 +17,26 @@ def main():
     frequency = 50  # set the frequency to 50 Hz
     sample_length = 65536
     fs = 65536  # sampling frequency
+    signal_duration = sample_length/fs
+    time_step = 1/fs
 
-    x_axis = np.arange(sample_length)
-    y_axis = np.sin(2 * np.pi * frequency * x_axis / fs)
+    x_axis = np.arange(0, signal_duration, time_step)
+    y_axis = np.sin(2 * np.pi * frequency * x_axis)
+
+    plt.subplot(211)
     plt.plot(x_axis, y_axis)
-    plt.xlabel('sample(n)')
-    plt.ylabel('voltage(V)')
-    plt.show()
+    plt.xlabel('Time [s]')
+    plt.ylabel('Amplitude')
 
     # 2. Wyznacz dyskretną transformatę Fouriera tego sygnału i przedstaw jego widmo
     # amplitudowe na wykresie w zakresie częstotliwości [0, fs/2], gdzie fs oznacza
     # częstotliwość próbkowania.
 
-    # Część poniżej jest prawdopodobnie nieprawidłowa
-    lower_bound = 1
-    upper_bound = 3
-    spacing = (upper_bound - lower_bound) / sample_length
+    amplitude = np.abs(np.fft.fft(y_axis))
+    frequencies = np.fft.fftfreq(y_axis.size, time_step)
 
-    time = np.arange(lower_bound, upper_bound, spacing)  # Fourier transform [1;3]
-    amplitude = y_axis
-
-    sp = np.fft.fft(amplitude)
-    freq = time / 2
-
-    plt.plot(freq, sp.real, freq, sp.imag)
+    plt.subplot(212)
+    plt.plot(frequencies, amplitude)
     plt.show()
 
 
