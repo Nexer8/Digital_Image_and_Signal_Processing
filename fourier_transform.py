@@ -111,8 +111,8 @@ def main():
 
     for signals_freq in signals_frequencies:
         fft_freq = np.abs(np.fft.fftfreq(int(fs[0] / 2), get_time_step(fs[0])))
-        signal_amplitude = create_x_axis(fs[0])
-        fft_amplitude = np.abs(np.fft.fft(create_y_axis(signals_freq, signal_amplitude)[0:fft_freq.size]))
+        time = create_x_axis(fs[0])
+        fft_amplitude = np.abs(np.fft.fft(create_y_axis(signals_freq, time)[0:fft_freq.size]))
 
         plt.subplot(411)
         plt.plot(fft_freq, fft_amplitude)
@@ -121,8 +121,8 @@ def main():
         plt.ylabel('Amplitude')
 
         fft_freq = np.abs(np.fft.fftfreq(int(fs[1] / 2), get_time_step(fs[1])))
-        signal_amplitude = create_x_axis(fs[1])
-        fft_amplitude = np.abs(np.fft.fft(create_y_axis(signals_freq, signal_amplitude)[0:fft_freq.size]))
+        time = create_x_axis(fs[1])
+        fft_amplitude = np.abs(np.fft.fft(create_y_axis(signals_freq, time)[0:fft_freq.size]))
 
         plt.subplot(412)
         plt.plot(fft_freq, fft_amplitude)
@@ -131,8 +131,8 @@ def main():
         plt.ylabel('Amplitude')
 
         fft_freq = np.abs(np.fft.fftfreq(int(fs[2] / 2), get_time_step(fs[2])))
-        signal_amplitude = create_x_axis(fs[2])
-        fft_amplitude = np.abs(np.fft.fft(create_y_axis(signals_freq, signal_amplitude)[0:fft_freq.size]))
+        time = create_x_axis(fs[2])
+        fft_amplitude = np.abs(np.fft.fft(create_y_axis(signals_freq, time)[0:fft_freq.size]))
 
         plt.subplot(413)
         plt.plot(fft_freq, fft_amplitude)
@@ -141,8 +141,8 @@ def main():
         plt.ylabel('Amplitude')
 
         fft_freq = np.abs(np.fft.fftfreq(int(fs[3] / 2), get_time_step(fs[3])))
-        signal_amplitude = create_x_axis(fs[3])
-        fft_amplitude = np.abs(np.fft.fft(create_y_axis(signals_freq, signal_amplitude)[0:fft_freq.size]))
+        time = create_x_axis(fs[3])
+        fft_amplitude = np.abs(np.fft.fft(create_y_axis(signals_freq, time)[0:fft_freq.size]))
 
         plt.subplot(414)
         plt.plot(fft_freq, fft_amplitude)
