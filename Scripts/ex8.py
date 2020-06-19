@@ -1,10 +1,9 @@
-import os
-import skimage
 from skimage import io, filters
 from matplotlib.pyplot import subplot, imshow, title, show, rcParams
+from skimage.color import rgb2gray
 rcParams['figure.figsize'] = [10, 10]
 
-image = io.imread(os.path.join(skimage.data_dir, 'grass.png'))  # low contrast image
+image = rgb2gray(io.imread('./Data/images/lenna_noisy.jpg'))  # high noise image
 
 # a) averaging filters
 gaussian3 = filters.gaussian(image, sigma=3)
