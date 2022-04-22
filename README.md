@@ -5,7 +5,7 @@ This repository serves as a learning environment for digital image and signal pr
 ## Authors
 
 - [Kinga Marek](https://github.com/astenna)
-- [Mariusz Wiśniewski]([https](https://github.com/Nexer8))
+- [Mariusz Wiśniewski](https://github.com/Nexer8)
 
 ## Signal Processing
 
